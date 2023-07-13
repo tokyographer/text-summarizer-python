@@ -3,6 +3,7 @@ from tkinter import filedialog
 from tkinter.ttk import Combobox
 import pyperclip
 from summarizetext import Summarizer
+from languagedropdown import dropdown
 
 # Create an instance of the Summarizer class
 summarizer = Summarizer()
@@ -62,7 +63,7 @@ stopwords_button.grid(row=1, column=2, padx=5, pady=5)
 
 language_label = tk.Label(window, text="Language:")
 language_label.grid(row=2, column=0, padx=10, pady=5)
-language_combobox = Combobox(window, values=["English", "Spanish"])
+language_combobox = dropdown(window, '/Users/tokyographer1/Sites/Python/pythonapps/summarizetext/languages.txt')
 language_combobox.grid(row=2, column=1, padx=10, pady=5)
 
 summarize_button = tk.Button(window, text="Summarize", command=summarize_text)
